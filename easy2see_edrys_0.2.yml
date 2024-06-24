@@ -1,0 +1,352 @@
+id: jpPBO3bX6F16SixQOG0s6I8MLTsKi274BcPxFkjk
+createdBy: TUimEVnbMmHL
+dateCreated: 1719225319090
+name: easy2see
+meta:
+  logo: ''
+  description: >-
+    Dieses Lab zum Thema I2C soll den Studierenden den grundlegenden Umgang mit
+    dem I2C Protokoll zeigen und soll gleichzeitig ein Anwendungsbeispiel bieten
+    für persönliche Projekte und andere schulische Zwecke.
+  selfAssign: false
+  defaultNumberOfRooms: '0'
+members:
+  teacher:
+    - |-
+      2ekbf9r8uUUpl
+      B8na5hPcYFOA
+  student: []
+modules:
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config: >-
+      # I2C Geschichte - Anwendungen - Möglichkeiten
+
+      Liebe Studierende, 
+
+
+      Es war einmal in einem fernen Land namens Bitania, einem Reich der
+      digitalen Wunder, in dem unzählige kleine Geräte miteinander sprachen und
+      arbeiteten, um das Leben der Menschen einfacher und reibungsloser zu
+      gestalten. In dieser Welt lebten zwei 
+
+      besondere Wesen: Meister Clockus und Sir Daten.
+
+
+      **Meister Clockus war der Herr der Zeit.**  Er trug eine große, goldene
+      Uhr um den Hals, die jeden seiner Schritte mit einem regelmäßigen Ticken
+      begleitete. **Sir Daten** hingegen war ein schlanker und geschmeidiger
+      **Bote, der Informationen und Nachrichten** in Windeseile von einem Ort
+      zum anderen brachte.
+
+
+      Eines Tages rief der weise König Mikrocontroller alle seine treuen Diener
+      zu einer dringenden Versammlung. "Unsere Welt wächst und entwickelt sich
+      ständig weiter", sagte er, "und es wird immer schwieriger, dass all unsere
+      Geräte miteinander kommunizieren können. Wir brauchen eine neue Methode,
+      um den Austausch von Informationen zu verbessern."
+
+
+      Meister Clockus und Sir Daten traten vor und verbeugten sich tief.
+      "Majestät", sagte Clockus, "wir glauben, dass wir eine Lösung gefunden
+      haben. Wir nennen sie **I2C – das Inter-Integrated Circuit-Protokoll**."
+
+
+      Der König sah sie neugierig an. "Erzählt mir mehr darüber", forderte er.
+
+
+      Meister Clockus begann zu erklären: "I2C ist eine Methode, bei der ich als
+      Meister der **Zeit das Taktgebende Signal** bereitstelle, damit alle
+      Geräte wissen, wann sie sprechen oder zuhören müssen. Ich halte alles im
+      richtigen Rhythmus."
+
+      Sir Daten fügte hinzu: "Und ich bin dafür verantwortlich, die Nachrichten
+      selbst zu übermitteln. Ich kann **lesen und schreiben**, je nachdem was
+      man von mir will. Auf diese Weise können wir beide gewährleisten, dass
+      alle Geräte ihre Informationen zur richtigen Zeit austauschen, ohne dass
+      es zu Verwirrung oder Datenkollisionen kommt."
+
+
+      Der König nickte beeindruckt. "Und wie funktioniert das in der Praxis?"
+
+
+      Clockus und Daten erklärten, dass jedes Gerät in Bitania eine
+      **einzigartige Adresse** erhalten würde. Der Meister Clockus würde dann
+      die Kommunikation beginnen, indem er das Signal startete und eine Adresse
+      sendete. Wenn das richtige Gerät seine Adresse hörte, würde es antworten
+      und die Datenübertragung würde beginnen. Sir Daten würde sicherstellen,
+      dass die Nachrichten korrekt und vollständig übertragen wurden.
+
+
+      "Das klingt großartig", sagte der König. "Aber was passiert, wenn mehr als
+      ein Gerät gleichzeitig senden möchte?"
+
+
+      Clockus lächelte. "Auch dafür haben wir eine Lösung, Majestät. Die Geräte
+      verwenden eine Methode namens **Arbitration**. Wenn zwei Geräte
+      gleichzeitig senden möchten, überprüft jedes Gerät das Signal auf der
+      Datenleitung. Das Gerät mit der niedrigeren Adresse hat Vorrang und darf
+      weiter senden, während das andere Gerät wartet."
+
+
+      Der König war begeistert. "Ihr habt großartige Arbeit geleistet, Clockus
+      und Daten. Dieses I2C-Protokoll wird unser Reich revolutionieren und die
+      Kommunikation zwischen unseren Geräten erheblich verbessern."
+
+
+      Und so wurde I2C in ganz Bitania eingeführt. Die Geräte kommunizierten nun
+      effizient und ohne Missverständnisse miteinander, und das Reich der
+      digitalen Wunder florierte wie nie zuvor. Meister Clockus und Sir Daten
+      wurden als Helden gefeiert und ihre Namen wurden in die Annalen der
+      Geschichte eingetragen, als diejenigen, die die Sprache der Geräte
+      perfektioniert hatten.
+
+
+      Und wenn sie nicht gestorben sind, dann ticken und übertragen sie noch
+      heute.
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: >-
+      # easy2see
+
+      Repository für Softwareentwicklungsprojekt SoSe 2024
+
+
+      ## Ideen
+
+
+      - dokumentation erforderlich da kein Vorwissen für I2C gebraucht wird
+
+      - einarbeitung kann kurz dauern
+
+      - Hilfestellung wichtig
+
+
+      1. I2C Adressen auslesen (5 min)
+         -  Adressen herausfinden
+         -  Wie? --> Brute Force!!
+         -  dazu jede Adresse mit For Schleife abtasten
+         -  [tolle Website](https://42project.net/mit-dem-arduino-alle-angeschlossenen-i2c-twi-adressen-scannen/)
+         -  [Wire.h](https://www.arduino.cc/reference/en/language/functions/communication/wire/) als grundlegende Library zur Verwendung des I2C Busses
+         -  hier kann auch auf spezifischere Funktionen verlinkt werden
+         -  Hinweise zu Funktionen im Code geben um Studenten Anfang zu erleichtern --> Website beachten!!
+         -  Libraries für verwendete Sensoren angeben und STudenten Fragen welche Adresse zu welchem Sensor gehört
+         -  --> anhand Informationen in Libraries
+        
+      2. Sensoren auslesen und darstellen
+
+          1. Real Time Clock
+            - **Libraries in PlatformIO einfügen** DS1307RTC Library
+            - ansteuern --> I2C STudenten in Library gucken lassen um Adresse zu sehen
+            - einstellen durch Funktion der Library
+            - ausgeben auf Terminal, **Juhu** *freu*
+           </br></br>
+          2. BME 680 Temp, Luftdruck/feuchte
+            - **Libraries in PlatformIO einfügen** Adafruit_BME680 , Adafruit_Sensor , Adafruit_BUSIO
+            - ansteuern durch Libraries
+            - einstellen des Sea Levels um H.ü.n.N. zu errechnen
+            - ausgeben der verschiedenen Werte in Konsole **Yeah** *UwU  OwO*
+        
+      3. *vllt. hier noch eine Aufgabe zur Kommunikation zwischen mehreren
+      Arduinos falls es zu schnell geht* 
+           
+      4. Display
+          1. - Einführungsbeispiel um text auszugeben, hier können die Funktionen direkt angegeben werden bzw. Funktionsparameter um Zeit nicht zu sprengen
+            
+          2. - Ziel: Datum und Uhrzeit zusammen mit der derzeitigen Temp, Luftdruck, Luftfeuchte und vllt. H.ü.n.N. ausgeben
+        ```
+    showInCustom: lobby
+    width: full
+    height: huge
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config: >-
+      # Und jetzt in Ernst
+
+
+      ## Allgemein
+
+      I²C, für englisch Inter-Integrated Circuit ist ein 1982 von Philips
+      Semiconductors entwickelter serieller Datenbus, der sich zwischenzeitlich
+      zu einem weithin akzeptierten Industriestandard entwickelt hat. Er wird
+      hauptsächlich für die Kommunikation zwischen verschiedenen
+      Schaltungsteilen benutzt.
+
+
+      ## Konzept  
+        - I2C ist als [Master-Slave-Bus](https://de.wikipedia.org/wiki/Master/Slave) konzipiert: 
+       ![I2C Bus mit 2 Master und 2 Slave-Bausteinen](https://www.picotech.com/images/uploads/library/topics/_med/I2C-Wiring.jpg)
+        - zwei Signalleitungen: Takt- und Datenleitung:
+          - Taktleitung: Taktsignal wird immer während der Datenübertragung vom Controller ausgegeben
+          - Datenleitung: Daten werden während einer Clock-High-Phase übertragen
+
+
+      ## Adressierung
+
+      - I2C-Adresse besteht aus:
+        - 7 Bit: Adresse
+        - 1 Bit: HIGH Lesezugriff, LOW (Schreibzugriff)
+      ![I2C-Adressierung](https://evision-webshop.de/media/a2/94/7b/1675540066/Totalphase-slave-address-fig2.png)
+
+
+      - jedes I2C-fähige Gerät besitzt eine festgelegte Adresse, die in manchen
+      Fällen vom Nutzer geändert werden kann
+
+        
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: lobby
+    width: half
+    height: huge
+  - url: ' https://jh-488.github.io/Edrys_Code_Editor/index.html'
+    config:
+      editorText: |
+        #include <Arduino.h>
+        #include <Wire.h>
+        #include <Adafruit_Sensor.h>
+        #include <Adafruit_BME680.h>
+
+        #define SEALEVELPRESSURE_HPA (1013.25)
+
+        Adafruit_BME680 bme; // I2C
+
+        void setup() {
+        Serial.begin(9600);
+        bme.begin();
+
+        bme.setTemperatureOversampling(BME680_OS_8X);
+        bme.setHumidityOversampling(BME680_OS_2X);
+        bme.setPressureOversampling(BME680_OS_4X);
+        bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
+        bme.setGasHeater(320, 150); 
+        }
+
+        void loop() {
+        Serial.print(F("Temperatur = "));
+        Serial.print(bme.temperature);
+        Serial.println(F(" *C"));
+
+        Serial.print(F("Druck = "));
+        Serial.print(bme.pressure / 100.0);
+        Serial.println(F(" hPa"));
+
+        Serial.print(F("Luftfeuchtigkeit = "));
+        Serial.print(bme.humidity);
+        Serial.println(F(" %"));
+
+        Serial.print(F("Gas Widerstand = "));
+        Serial.print(bme.gas_resistance / 1000.0);
+        Serial.println(F(" KOhms"));
+
+        Serial.print(F("Geschaetzte Hoehe = "));
+        Serial.print(bme.readAltitude(SEALEVELPRESSURE_HPA));
+        Serial.println(F(" m"));
+
+        Serial.println();
+        delay(10000);
+        }
+      runCommand: execute
+      language: cpp
+      theme: light
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: station
+    width: full
+    height: tall
+  - url: https://edrys-labs.github.io/module-station-stream/index.html
+    config: ''
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig:
+      video: true
+      audio: false
+    showInCustom: station
+    width: half
+    height: medium
+  - url: https://cross-lab-project.github.io/edrys_module-pyxtermjs/index.html
+    config: ''
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig:
+      server: http://localhost:5000/pty
+      execute: execute
+      script: >
+        echo $CODE | base64 --decode > Hello.ino
+
+        arduino-cli sketch new Hello
+
+        olddir=$(pwd)
+
+        mv Hello.ino Hello
+
+        cd Hello
+
+        arduino-cli board attach -p /dev/ttyACM0 -b arduino:avr:uno
+
+        cd $olddir
+
+        arduino-cli compile Hello && arduino-cli upload -p /dev/ttyACM0 Hello &&
+        arduino-cli monitor -p /dev/ttyACM0
+      enable:
+        teacher: true
+        student: true
+    showInCustom: station
+    width: half
+    height: medium
+  - url: https://cross-lab-project.github.io/edrys_module-markdown-it/index.html
+    config: >
+      # easy2see
+
+      Repository für Softwareentwicklungsprojekt SoSe 2024
+
+
+      ## Ideen
+
+
+      - dokumentation erforderlich da kein Vorwissen für I2C gebraucht wird
+
+      - einarbeitung kann kurz dauern
+
+      - Hilfestellung wichtig
+
+
+      1. I2C Adressen auslesen (5 min)
+         -  Adressen herausfinden
+         -  Wie? --> Brute Force!!
+         -  dazu jede Adresse mit For Schleife abtasten
+         -  [tolle Website](https://42project.net/mit-dem-arduino-alle-angeschlossenen-i2c-twi-adressen-scannen/)
+         -  [Wire.h](https://www.arduino.cc/reference/en/language/functions/communication/wire/) als grundlegende Library zur Verwendung des I2C Busses
+         -  hier kann auch auf spezifischere Funktionen verlinkt werden
+         -  Hinweise zu Funktionen im Code geben um Studenten Anfang zu erleichtern --> Website beachten!!
+         -  Libraries für verwendete Sensoren angeben und STudenten Fragen welche Adresse zu welchem Sensor gehört
+         -  --> anhand Informationen in Libraries
+        
+      2. Sensoren auslesen und darstellen
+
+          1. Real Time Clock
+            - **Libraries in PlatformIO einfügen** DS1307RTC Library
+            - ansteuern --> I2C STudenten in Library gucken lassen um Adresse zu sehen
+            - einstellen durch Funktion der Library
+            - ausgeben auf Terminal, **Juhu** *freu*
+           </br></br>
+          2. BME 680 Temp, Luftdruck/feuchte
+            - **Libraries in PlatformIO einfügen** Adafruit_BME680 , Adafruit_Sensor , Adafruit_BUSIO
+            - ansteuern durch Libraries
+            - einstellen des Sea Levels um H.ü.n.N. zu errechnen
+            - ausgeben der verschiedenen Werte in Konsole **Yeah** *UwU  OwO*
+        
+      3. *vllt. hier noch eine Aufgabe zur Kommunikation zwischen mehreren
+      Arduinos falls es zu schnell geht* 
+           
+      4. Display
+          1. - Einführungsbeispiel um text auszugeben, hier können die Funktionen direkt angegeben werden bzw. Funktionsparameter um Zeit nicht zu sprengen
+            
+          2. - Ziel: Datum und Uhrzeit zusammen mit der derzeitigen Temp, Luftdruck, Luftfeuchte und vllt. H.ü.n.N. ausgeben
+        }
+        ```
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: station
+    width: full
+    height: medium
