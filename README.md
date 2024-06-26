@@ -1,3 +1,5 @@
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://github.com/MaxWe18/easy2see/edit/main/README.md)
+
 # easy2see
 Repository für Softwareentwicklungsprojekt SoSe 2024
 
