@@ -1,7 +1,48 @@
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/MaxWe18/easy2see/main/README.md?token=GHSAT0AAAAAACTXD5LURTTJ7WRUGWCFWEGGZT3Z3SA)
 
-# easy2see
-Repository für Softwareentwicklungsprojekt SoSe 2024
+# easy2see  
+Vor euch seht ihr nun zwei Arduinos und zwei weitere Komponenten. Diese kommunizieren alle über eine I2C Schnittstelle miteinander. 
+Komponenten:
+- BME680 (Umgebungssensor mit integrierter Sensorik für Luftfeuchtigkeit, Druck, Temperatur und Luftgüte)
+- Tiny RTC I2C Module (**R**eal **T**ime **C**lock)
+- 2x Arduino Uno R3
+
+Unsere Aufgaben sind immer gleich struckturiert: 
+- Aufgabe 'Nummer':
+   - allgemeine Informationen zur Aufgabe
+   - Lernziel
+- Aufgabenstellung
+- Hinweise:
+   - hilfreiche Tipps & Webseiten, die euch bei der Erarbeitung der Aufgaben helfen können
+   - (verwendete Bibliotheken) nicht für jede Aufgabe relevant  
+- Startcode:
+   - für jede Aufgabe wurde ein Code-Schnipsel vorbereitet, der euch den Einstieg erleichtern soll
+   - diesen müsst ihr bei jede Aufgabe neu in den Code-Editor kopieren, könnt ihn aber frei verändern
+- Hilfen:
+   - wenn ihr nicht mehr weiter wisst, gibt es hier zusätzliche Hinweise
+
+## Aufgabe 1
+In der Einführung wurden euch die grundlegenden Eigenschaften der I2C-Kommunikation erläutert. In der 1. Aufgabe soll dieses Wissen nun auf die Probe gestellt werden. Geht also sicher das ihr euch die Einführung genau durchgelesen habt. 
+### Aufgabenstellung
+Wie ihr in dem Live-Feed sehen könnt haben wir einen Aufbau bestehend aus einem I2C Master und 3 Slaves. Um (Uckermark) eine erfolgreiche Kommunikation zwischen Target und Controller zu gewährleisten, benötigen wir an erster Stelle die Adressen der jeweiligen Targets. Schreibt einen Code der die Adressen der 3 Peripheren Geräte ausgibt. 
+
+### Hinweise
+
+### Startcode
+### Hilfen (vllt.)
+
+## Aufgabe 2
+### Aufgabenstellung
+### Hinweise
+### Startcode
+### Hilfen (vllt.)
+
+### Aufgabe 3
+### Aufgabenstellung
+### Hinweise
+### Startcode
+### Hilfen (vllt.)
+
 
 ## Ideen
 
