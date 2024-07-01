@@ -24,12 +24,28 @@ Unsere Aufgaben sind immer gleich struckturiert:
 ## Aufgabe 1
 In der Einführung wurden euch die grundlegenden Eigenschaften der I2C-Kommunikation erläutert. In der 1. Aufgabe soll dieses Wissen nun auf die Probe gestellt werden. Geht also sicher das ihr euch die Einführung genau durchgelesen habt. 
 ### Aufgabenstellung
-Wie ihr in dem Live-Feed sehen könnt haben wir einen Aufbau bestehend aus einem I2C Master und 3 Slaves. Um (Uckermark) eine erfolgreiche Kommunikation zwischen Target und Controller zu gewährleisten, benötigen wir an erster Stelle die Adressen der jeweiligen Targets. Schreibt einen Code der die Adressen der 3 Peripheren Geräte ausgibt. 
+Wie ihr in dem Live-Feed sehen könnt haben wir einen Aufbau bestehend aus einem I2C Master und 3 Slaves. Um (Uckermark) eine erfolgreiche Kommunikation zwischen Target und Controller zu gewährleisten, benötigen wir an erster Stelle die Adressen der jeweiligen Targets. Schreibt einen Code der die Adressen der 3 Peripheren Komponenten ausgibt. 
+Außerdem sollt ihr herausfinden um welche Komponente es sich bei der herausgefundenen Adresse handelt. Dafür lohnt es sich in der Dokumentation der Komponente oder im Datenblatt nachzuschauen. 
 
 ### Hinweise
+Datenblätter:
+- [Datasheet BME680](https://www.joy-it.net/files/files/Produkte/SEN-BME680/SEN-BME680-Datenblatt.pdf)
+- [Anleitung BME680](https://www.joy-it.net/files/files/Produkte/SEN-BME680/SEN-BME680_Anleitung_2024-04-11.pdf)
+- [Datasheet tiny RTC](https://pdf.direnc.net/upload/tinyrtc-i2c-modul-datasheet.pdf)
+
+Libraries:
+- [Adafruit_BME680](https://github.com/adafruit/Adafruit_BME680)
+- [Adafruit_BusIO](https://github.com/adafruit/Adafruit_BusIO)
+- [Adafruit_Sensor](https://github.com/adafruit/Adafruit_Sensor)
+- [RTClib](https://github.com/adafruit/RTClib)
+- [Wire](https://github.com/esp8266/Arduino/blob/master/libraries/Wire/Wire.h)
+
 
 ### Startcode
-### Hilfen (vllt.)
+wird noch gemacht
+### Hilfen
+Die Adressen können herausgefunden werden, indem man jede Adresse hintereinander abfragt und die Antwort abwartet. Die Antwort ist dann automatisch der Beweis das die jeweilige Adresse belegt also vergeben ist. Diese Abfrage kann in einer Schleife bearbeitet werden. Wichtig dabei ist das der Adressraum nicht überschritten werden sollte. --> Spezifikation von I2C beachten.
+Um die Komponenten herauszufinden lohnt sich ein genauerer Blick in die Libraries der Bauteile.
 
 ## Aufgabe 2
 ### Aufgabenstellung
