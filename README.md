@@ -48,7 +48,18 @@ Die Adressen können herausgefunden werden, indem man jede Adresse hintereinande
 Um die Komponenten herauszufinden lohnt sich ein genauerer Blick in die Libraries der Bauteile.
 
 ## Aufgabe 2
+Nun wo uns die Adressen der jeweiligen Komponenten bekannt sind, wollen wir diese nutzen um Daten auszutauschen. Wie euch hoffentlich in den vorher verlinkten Datenblättern aufgefallen ist, handelt es sich bei den 2 Komponenten jeweils um ein Temperatursensor und eine Echtzeit-Uhr. Der Temperatursensor BME680 kann nicht nur die Temperatur, sondern auch Luftdruck, Luftfeuchtigkeit und Luftgüte messen. Wie man es von einer Uhr erwartet, gibt diese genauso Uhrzeit, Tage, Monate und Jahr an.
 ### Aufgabenstellung
+Da es sich um 2 verschiedene Komponenten handelt, werden wir diese Aufgabe in zwei Teilaufgaben unterteilen:
+1. Die in der Einleitung erwähnten Funktionen sollt ihr nun über direkter Abfrage der RTC im Terminal in geeigneter Form ausgeben.  
+   Dabei sollte euch auffallen, dass die ausgegebene Uhrzeit nicht mit der aktuellen Zeit übereinstimmt. Warum tritt dieser Unterschied auf?
+   Um die Uhrzeit komfortabel einzustellen gibt es in der Library der RTC eine Funktion die die Systemzeit des Hostcomputers übernimmt. Implementiert diese Einstellung!
+   Wird die Uhrzeit und das Datum nun richtig ausgegeben?
+2. Um die vom Sensor gemessenen Daten verwendendbar und lesbar für Menschen zu machen, müssen diese in eine geeignete Form umgerechnet werden. Dafür greifen uns auch hier 
+   verschiedenste Libraries unter die Arme. Lest euch dafür die Dokumentation für den Sensor durch!
+   Gebt Temperatur, Feuchtigkeit und Druck auf dem Terminal aus! Achtet hier auf die richtig gewählten Einheiten und sinnvolle Rundung.
+   Mithilfe des Luftdruckes und dem Sea Level können wir nun die Höhe über normal Null berechnen.
+   
 ### Hinweise
 ### Startcode
 ### Hilfen (vllt.)
