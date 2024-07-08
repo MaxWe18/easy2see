@@ -24,7 +24,7 @@ Unsere Aufgaben sind immer gleich struckturiert:
 ## Aufgabe 1
 In der Einführung wurden euch die grundlegenden Eigenschaften der I2C-Kommunikation erläutert. In der 1. Aufgabe soll dieses Wissen nun auf die Probe gestellt werden. Geht also sicher das ihr euch die Einführung genau durchgelesen habt. 
 ### Aufgabenstellung
-Wie ihr in dem Live-Feed sehen könnt haben wir einen Aufbau bestehend aus einem I2C Master und 3 Slaves. Um (Uckermark) eine erfolgreiche Kommunikation zwischen Target und Controller zu gewährleisten, benötigen wir an erster Stelle die Adressen der jeweiligen Targets. Schreibt einen Code der die Adressen der 3 Peripheren Komponenten ausgibt. 
+Wie ihr in dem Live-Feed sehen könnt haben wir einen Aufbau bestehend aus einem I2C Master und 3 Slaves. Um eine erfolgreiche Kommunikation zwischen Target und Controller zu gewährleisten, benötigen wir an erster Stelle die Adressen der jeweiligen Targets. Schreibt einen Code der die Adressen der 3 Peripheren Komponenten ausgibt. 
 Außerdem sollt ihr herausfinden um welche Komponente es sich bei der herausgefundenen Adresse handelt. Dafür lohnt es sich in der Dokumentation der Komponente oder im Datenblatt nachzuschauen. 
 
 ### Hinweise
@@ -61,6 +61,7 @@ Da es sich um 2 verschiedene Komponenten handelt, werden wir diese Aufgabe in zw
    Mithilfe des Luftdruckes und dem Sea Level können wir nun die Höhe über normal Null berechnen.
    
 ### Hinweise
+Die Luftgüte wird hier in unserer Aufgabe nicht weiter betrachtet, da der Algorithmus zur Berechnung dieser vom Arduino zu viel Rechenleistung abverlangt und deswegen leider nicht geeignet ist. 
 Libraries:
 - [RTClib](https://github.com/adafruit/RTClib)
 - [Adafruit_BME680](https://github.com/adafruit/Adafruit_BME680)
@@ -68,6 +69,7 @@ Libraries:
 - [Adafruit_Sensor](https://github.com/adafruit/Adafruit_Sensor)
 
 ### Startcode
+kommt noch
 ### Hilfen (vllt.)
 1. Codeschnipsel Systemzeit: hier einfügen uwu uwu
 2.
@@ -75,10 +77,16 @@ Libraries:
    2. Codeschnipsel H.ü.n.N.
 
 ### Aufgabe 3
+Um (Uckermark) unsere Daten auch ohne angeschlossenen Computer auslesen zu können, wollen wir diese jetzt auf einfache Weise visualisieren.
+Dafür ist am Arduino über eine SPI Schnittstelle (falls Interesse besteht könnt ihr euch hier selbst belesen) ein kleines Display angeschlossen.
 ### Aufgabenstellung
+Das Display soll nun abwechselnd Lufttemperatur, Luftdruck und Luftfeuchte zusammen mit der aktuellen Zeit und dem Datum anzeigen. Dafür müsst ihr euer Wissen aus den vorangegangenen Aufgaben nutzen und dazu noch das Display richtig konfigurieren. Beachtet hierfür die Hinweise. Ihr könnt bei dieser Aufgabe frei entscheiden wie ihr die Daten optisch darstellen wollt. Der Fantasie sind keine Grenzen gesetzt, jedoch sollte man die Werte am Ende auch gut lesen können. Achtet deswegen auf Kontraste.
 ### Hinweise
+[Anleitung Display](https://www.waveshare.com/wiki/1.69inch_LCD_Module#Arduino)
 ### Startcode
+kommt noch
 ### Hilfen (vllt.)
+Codeschnipsel
 
 
 ## Ideen
