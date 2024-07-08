@@ -61,8 +61,18 @@ Da es sich um 2 verschiedene Komponenten handelt, werden wir diese Aufgabe in zw
    Mithilfe des Luftdruckes und dem Sea Level können wir nun die Höhe über normal Null berechnen.
    
 ### Hinweise
+Libraries:
+- [RTClib](https://github.com/adafruit/RTClib)
+- [Adafruit_BME680](https://github.com/adafruit/Adafruit_BME680)
+- [Adafruit_BusIO](https://github.com/adafruit/Adafruit_BusIO)
+- [Adafruit_Sensor](https://github.com/adafruit/Adafruit_Sensor)
+
 ### Startcode
 ### Hilfen (vllt.)
+1. Codeschnipsel Systemzeit: hier einfügen uwu uwu
+2.
+   1. Codeschnipsel Temp., Feuchtigkeit und Druck
+   2. Codeschnipsel H.ü.n.N.
 
 ### Aufgabe 3
 ### Aufgabenstellung
