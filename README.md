@@ -42,7 +42,16 @@ Libraries:
 
 
 ### Startcode
-wird noch gemacht
+``` ino
+#include <Wire.h>
+
+void setup() {
+Serial.begin (9600);
+Wire.begin();
+}
+
+void loop() {}
+```
 ### Hilfen
 Die Adressen können herausgefunden werden, indem man jede Adresse hintereinander abfragt und die Antwort abwartet. Die Antwort ist dann automatisch der Beweis das die jeweilige Adresse belegt also vergeben ist. Diese Abfrage kann in einer Schleife bearbeitet werden. Wichtig dabei ist das der Adressraum nicht überschritten werden sollte. --> Spezifikation von I2C beachten.
 Um die Komponenten herauszufinden lohnt sich ein genauerer Blick in die Libraries der Bauteile.
@@ -69,7 +78,22 @@ Libraries:
 - [Adafruit_Sensor](https://github.com/adafruit/Adafruit_Sensor)
 
 ### Startcode
-kommt noch
+``` ino
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BME680.h>
+#include <RTClib.h>
+
+
+void setup() {
+Serial.begin (9600);
+bme.begin();
+
+}
+
+void loop() {}
+```
 ### Hilfen (vllt.)
 1. Codeschnipsel Systemzeit: hier einfügen uwu uwu
 2.
