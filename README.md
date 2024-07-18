@@ -14,11 +14,9 @@ Unsere Aufgaben sind immer gleich struckturiert:
    - allgemeine Informationen zur Aufgabe
    - Lernziel    
 - Aufgabenstellung
-     
 - Hinweise:       
    - hilfreiche Tipps & Webseiten, die euch bei der Erarbeitung der Aufgaben helfen können  
    - (verwendete Bibliotheken) nicht für jede Aufgabe relevant
-     
 - Startcode:  
    - für jede Aufgabe wurde ein Code-Schnipsel vorbereitet, der euch den Einstieg erleichtern soll
    - diesen müsst ihr bei jede Aufgabe neu in den Code-Editor kopieren, könnt ihn aber frei verändern
@@ -78,6 +76,7 @@ Da es sich um 2 verschiedene Komponenten handelt, werden wir diese Aufgabe in zw
 ### Hinweise
 Die Luftgüte wird hier in unserer Aufgabe nicht weiter betrachtet, da der Algorithmus zur Berechnung dieser vom Arduino zu viel Rechenleistung abverlangt und deswegen leider nicht geeignet ist. 
 Libraries:  
+
 - [RTClib](https://github.com/adafruit/RTClib)
 - [Adafruit_BME680](https://github.com/adafruit/Adafruit_BME680)
 - [Adafruit_BusIO](https://github.com/adafruit/Adafruit_BusIO)
@@ -103,15 +102,18 @@ void loop() {}
 ### Hilfen
 
 Die Systemzeit könnt ihr ganz einfach vom Host PC übernehmen. Nutzt dafür einfach die RTCLib, dort findet ihr folgenden Programmcode:
+
 ``` ino
 DateTime now = rtc.now(); 
 ```
 
 Erstellt ein Objekt mit dem Namen bme auf den I2C Pins D5 und D4
+
 ```ino
 Adafruit_BME680 bme; // I2C
 ```
 Um bessere Messwerte zu erzielen können wir ein in der Signalverabeitung verwendetes Verfahren benutzen, die Überabtastung (engl.: Oversampling). Eine Überabtastung liegt dann vor, wenn ein Signal mit einer höheren Abtastrate bearbeitet wird, als für die Darstellung der Signalbandbreite benötigt wird. [Quelle](https://de.wikipedia.org/wiki/Überabtastung)
+
 ```ino
 bme.setTemperatureOversampling(BME680_OS_8X);
 bme.setHumidityOversampling(BME680_OS_2X);
@@ -120,6 +122,7 @@ bme.setHumidityOversampling(BME680_OS_2X);
 Wenn ihr die oberen Hilfen bereits verwendet habt könnt ihr nun noch einfacher auf die Sensor Daten zugreifen. Die Dokumentation des AdafruitBME680 hilft euch dabei.
 
 Mit Hilfe dieser Programmzeile könnt ihr den Druck definieren der auf Höhe des Meeresspiegels herrscht und somit die Höhe über Normal Null aproximieren. 
+
 ```ino
 #define SEALEVELPRESSURE_HPA (1013.25)
 ```
