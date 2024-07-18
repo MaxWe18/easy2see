@@ -10,23 +10,31 @@ Komponenten:
 
 Unsere Aufgaben sind immer gleich struckturiert:  
 
-- Aufgabe 'Nummer':  
+- Aufgabe 'Nummer':
+  
    - allgemeine Informationen zur Aufgabe
-   - Lernziel    
+   - Lernziel
+     
 - Aufgabenstellung
-- Hinweise:       
+- Hinweise:
+    
    - hilfreiche Tipps & Webseiten, die euch bei der Erarbeitung der Aufgaben helfen können  
    - (verwendete Bibliotheken) nicht für jede Aufgabe relevant
-- Startcode:  
+     
+- Startcode:
+  
    - für jede Aufgabe wurde ein Code-Schnipsel vorbereitet, der euch den Einstieg erleichtern soll
    - diesen müsst ihr bei jede Aufgabe neu in den Code-Editor kopieren, könnt ihn aber frei verändern
-- Hilfen:  
+     
+- Hilfen:
+  
    - wenn ihr nicht mehr weiter wisst, gibt es hier zusätzliche Hinweise
 
 ## Aufgabe 1
 In der Einführung wurden euch die grundlegenden Eigenschaften der I2C-Kommunikation erläutert. In der 1. Aufgabe soll dieses Wissen nun auf die Probe gestellt werden. Geht also sicher das ihr euch die Einführung genau durchgelesen habt. 
 ### Aufgabenstellung
-Wie ihr in dem Live-Feed sehen könnt haben wir einen Aufbau bestehend aus einem I2C Master und 3 Slaves. Um eine erfolgreiche Kommunikation zwischen Target und Controller zu gewährleisten, benötigen wir an erster Stelle die Adressen der jeweiligen Targets. Schreibt einen Code der die Adressen der 3 Peripheren Komponenten ausgibt. 
+Wie ihr in dem Live-Feed sehen könnt haben wir einen Aufbau bestehend aus einem I2C Master und 3 Slaves. Um eine erfolgreiche Kommunikation zwischen Target und Controller zu gewährleisten, benötigen wir an erster Stelle die Adressen der jeweiligen Targets. Schreibt einen Code der die Adressen der 3 Peripheren Komponenten ausgibt.
+
 Außerdem sollt ihr herausfinden um welche Komponente es sich bei der herausgefundenen Adresse handelt. Dafür lohnt es sich in der Dokumentation der Komponente oder im Datenblatt nachzuschauen. 
 
 ### Hinweise
@@ -58,19 +66,21 @@ void loop() {}
 ```
 ### Hilfen
 Die Adressen können herausgefunden werden, indem man jede Adresse hintereinander abfragt und die Antwort abwartet. Die Antwort ist dann automatisch der Beweis das die jeweilige Adresse belegt also vergeben ist. Diese Abfrage kann in einer Schleife bearbeitet werden. Wichtig dabei ist das der Adressraum nicht überschritten werden sollte. --> Spezifikation von I2C beachten.
+
 Um die Komponenten herauszufinden lohnt sich ein genauerer Blick in die Libraries der Bauteile.
 
 ## Aufgabe 2
 Nun wo uns die Adressen der jeweiligen Komponenten bekannt sind, wollen wir diese nutzen um Daten auszutauschen. Wie euch hoffentlich in den vorher verlinkten Datenblättern aufgefallen ist, handelt es sich bei den 2 Komponenten jeweils um ein Temperatursensor und eine Echtzeit-Uhr. Der Temperatursensor BME680 kann nicht nur die Temperatur, sondern auch Luftdruck, Luftfeuchtigkeit und Luftgüte messen. Wie man es von einer Uhr erwartet, gibt diese genauso Uhrzeit, Tage, Monate und Jahre an.
 ### Aufgabenstellung
 Da es sich um 2 verschiedene Komponenten handelt, werden wir diese Aufgabe in zwei Teilaufgaben unterteilen:
-1. Die in der Einleitung erwähnten Funktionen sollt ihr nun über direkter Abfrage der RTC im Terminal in geeigneter Form ausgeben.  
-   Dabei sollte euch auffallen, dass die ausgegebene Uhrzeit nicht mit der aktuellen Zeit übereinstimmt. Warum tritt dieser Unterschied auf?
-   Um die Uhrzeit komfortabel einzustellen gibt es in der Library der RTC eine Funktion die die Systemzeit des Hostcomputers übernimmt. Implementiert diese Einstellung!
+
+1. Die in der Einleitung erwähnten Funktionen sollt ihr nun über direkter Abfrage der RTC im Terminal in geeigneter Form ausgeben.    
+   Dabei sollte euch auffallen, dass die ausgegebene Uhrzeit nicht mit der aktuellen Zeit übereinstimmt. Warum tritt dieser Unterschied auf?  
+   Um die Uhrzeit komfortabel einzustellen gibt es in der Library der RTC eine Funktion die die Systemzeit des Hostcomputers übernimmt. Implementiert diese Einstellung!    
    Wird die Uhrzeit und das Datum nun richtig ausgegeben?
-2. Um die vom Sensor gemessenen Daten verwendendbar und lesbar für Menschen zu machen, müssen diese in eine geeignete Form umgerechnet werden. Dafür greifen uns auch hier 
-   verschiedenste Libraries unter die Arme. Lest euch dafür die Dokumentation für den Sensor durch!
-   Gebt Temperatur, Feuchtigkeit und Druck auf dem Terminal aus! Achtet hier auf die richtig gewählten Einheiten und sinnvolle Rundung.
+3. Um die vom Sensor gemessenen Daten verwendendbar und lesbar für Menschen zu machen, müssen diese in eine geeignete Form umgerechnet werden. Dafür greifen uns auch hier 
+   verschiedenste Libraries unter die Arme. Lest euch dafür die Dokumentation für den Sensor durch!  
+   Gebt Temperatur, Feuchtigkeit und Druck auf dem Terminal aus! Achtet hier auf die richtig gewählten Einheiten und sinnvolle Rundung.  
    Mithilfe des Luftdruckes und dem Sea Level können wir nun die Höhe über normal Null berechnen.
    
 ### Hinweise
@@ -101,11 +111,17 @@ void loop() {}
 ```
 ### Hilfen
 
+Real-Time-Clock
+===============
+
 Die Systemzeit könnt ihr ganz einfach vom Host PC übernehmen. Nutzt dafür einfach die RTCLib, dort findet ihr folgenden Programmcode:
 
 ``` ino
 DateTime now = rtc.now(); 
 ```
+
+BME-680
+=======
 
 Erstellt ein Objekt mit dem Namen bme auf den I2C Pins D5 und D4
 
@@ -127,14 +143,15 @@ Mit Hilfe dieser Programmzeile könnt ihr den Druck definieren der auf Höhe des
 #define SEALEVELPRESSURE_HPA (1013.25)
 ```
 
-### Aufgabe 3
-Um unsere Daten auch ohne angeschlossenen Computer auslesen zu können, wollen wir diese jetzt auf einfache Weise visualisieren.
+## Aufgabe 3
+Um unsere Daten auch ohne angeschlossenen Computer auslesen zu können, wollen wir diese jetzt auf einfache Weise visualisieren.  
 Dafür ist am Arduino über eine SPI Schnittstelle (falls Interesse besteht könnt ihr euch hier selbst belesen) ein kleines Display angeschlossen.
 ### Aufgabenstellung
 Das Display soll nun abwechselnd Lufttemperatur, Luftdruck und Luftfeuchte zusammen mit der aktuellen Zeit und dem Datum anzeigen. Dafür müsst ihr euer Wissen aus den vorangegangenen Aufgaben nutzen und dazu noch das Display richtig konfigurieren. Beachtet hierfür die Hinweise. Ihr könnt bei dieser Aufgabe frei entscheiden wie ihr die Daten optisch darstellen wollt. Der Fantasie sind keine Grenzen gesetzt, jedoch sollte man die Werte am Ende auch gut lesen können. Achtet deswegen auf Kontraste.
 ### Hinweise
 [Anleitung Display](https://www.waveshare.com/wiki/1.69inch_LCD_Module#Arduino)
 ### Startcode
+
 ``` ino
 #include <Arduino.h>
 #include <Wire.h>
@@ -155,6 +172,7 @@ void setup() {
 
 void loop() {}
 ```
+
 ### Hilfen
-Nun seid ihr gefragt. Bei dieser Aufgabenstellung geben wir euch keine Hilfen, denn ihr habt bis hierhin gelernt wie man mit Bibliotheken und Tutorials umgeht und die benötigten Informationen in euer eigenes Programm übernehmt. 
+Nun seid ihr gefragt. Bei dieser Aufgabenstellung geben wir euch keine Hilfen, denn ihr habt bis hierhin gelernt wie man mit Bibliotheken und Tutorials umgeht und die benötigten Informationen in euer eigenes Programm übernehmt.  
 Viel Spaß beim ausprobieren :)
