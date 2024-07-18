@@ -21,7 +21,7 @@ Unsere Aufgaben sind immer gleich struckturiert:
 - Hinweise:
     
    - hilfreiche Tipps & Webseiten, die euch bei der Erarbeitung der Aufgaben helfen können  
-   - (verwendete Bibliotheken) nicht für jede Aufgabe relevant
+   - verwendete Bibliotheken nicht für jede Aufgabe relevant
      
 - Startcode:
   
