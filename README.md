@@ -8,6 +8,7 @@ Komponenten:
 - Tiny RTC I2C Module DS1307 (**R**eal **T**ime **C**lock)
 - 2x Arduino Uno R3
 
+
 Unsere Aufgaben sind immer gleich struckturiert:  
 
 - Aufgabe 'Nummer':
@@ -16,6 +17,7 @@ Unsere Aufgaben sind immer gleich struckturiert:
    - Lernziel
      
 - Aufgabenstellung
+  
 - Hinweise:
     
    - hilfreiche Tipps & Webseiten, die euch bei der Erarbeitung der Aufgaben helfen können  
@@ -65,8 +67,7 @@ void setup() {
 void loop() {}
 ```
 ### Hilfen
-Die Adressen können herausgefunden werden, indem man jede Adresse hintereinander abfragt und die Antwort abwartet. Die Antwort ist dann automatisch der Beweis das die jeweilige Adresse belegt also vergeben ist. Diese Abfrage kann in einer Schleife bearbeitet werden. Wichtig dabei ist das der Adressraum nicht überschritten werden sollte. --> Spezifikation von I2C beachten.
-
+Die Adressen können herausgefunden werden, indem man jede Adresse hintereinander abfragt und die Antwort abwartet. Die Antwort ist dann automatisch der Beweis das die jeweilige Adresse belegt also vergeben ist. Diese Abfrage kann in einer Schleife bearbeitet werden. Wichtig dabei ist das der Adressraum nicht überschritten werden sollte. --> Spezifikation von I2C beachten.  
 Um die Komponenten herauszufinden lohnt sich ein genauerer Blick in die Libraries der Bauteile.
 
 ## Aufgabe 2
@@ -78,7 +79,7 @@ Da es sich um 2 verschiedene Komponenten handelt, werden wir diese Aufgabe in zw
    Dabei sollte euch auffallen, dass die ausgegebene Uhrzeit nicht mit der aktuellen Zeit übereinstimmt. Warum tritt dieser Unterschied auf?  
    Um die Uhrzeit komfortabel einzustellen gibt es in der Library der RTC eine Funktion die die Systemzeit des Hostcomputers übernimmt. Implementiert diese Einstellung!    
    Wird die Uhrzeit und das Datum nun richtig ausgegeben?
-3. Um die vom Sensor gemessenen Daten verwendendbar und lesbar für Menschen zu machen, müssen diese in eine geeignete Form umgerechnet werden. Dafür greifen uns auch hier 
+2. Um die vom Sensor gemessenen Daten verwendendbar und lesbar für Menschen zu machen, müssen diese in eine geeignete Form umgerechnet werden. Dafür greifen uns auch hier 
    verschiedenste Libraries unter die Arme. Lest euch dafür die Dokumentation für den Sensor durch!  
    Gebt Temperatur, Feuchtigkeit und Druck auf dem Terminal aus! Achtet hier auf die richtig gewählten Einheiten und sinnvolle Rundung.  
    Mithilfe des Luftdruckes und dem Sea Level können wir nun die Höhe über normal Null berechnen.
@@ -144,7 +145,7 @@ Mit Hilfe dieser Programmzeile könnt ihr den Druck definieren der auf Höhe des
 ```
 
 ## Aufgabe 3
-Um unsere Daten auch ohne angeschlossenen Computer auslesen zu können, wollen wir diese jetzt auf einfache Weise visualisieren.  
+Um unsere Daten auch ohne angeschlossenen Computer auslesen zu können, wollen wir diese jetzt auf einfache Weise visualisieren.    
 Dafür ist am Arduino über eine SPI Schnittstelle (falls Interesse besteht könnt ihr euch hier selbst belesen) ein kleines Display angeschlossen.
 ### Aufgabenstellung
 Das Display soll nun abwechselnd Lufttemperatur, Luftdruck und Luftfeuchte zusammen mit der aktuellen Zeit und dem Datum anzeigen. Dafür müsst ihr euer Wissen aus den vorangegangenen Aufgaben nutzen und dazu noch das Display richtig konfigurieren. Beachtet hierfür die Hinweise. Ihr könnt bei dieser Aufgabe frei entscheiden wie ihr die Daten optisch darstellen wollt. Der Fantasie sind keine Grenzen gesetzt, jedoch sollte man die Werte am Ende auch gut lesen können. Achtet deswegen auf Kontraste.
@@ -174,5 +175,6 @@ void loop() {}
 ```
 
 ### Hilfen
-Nun seid ihr gefragt. Bei dieser Aufgabenstellung geben wir euch keine Hilfen, denn ihr habt bis hierhin gelernt wie man mit Bibliotheken und Tutorials umgeht und die benötigten Informationen in euer eigenes Programm übernehmt.  
+Nun seid ihr gefragt. Bei dieser Aufgabenstellung geben wir euch keine Hilfen, denn ihr habt bis hierhin gelernt wie man mit Bibliotheken und Tutorials umgeht und die benötigten Informationen in euer eigenes Programm übernehmt.
+
 Viel Spaß beim ausprobieren :)
