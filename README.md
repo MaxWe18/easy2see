@@ -3,9 +3,9 @@
 # easy2see  
 Vor euch seht ihr nun zwei Arduinos und zwei weitere Komponenten. Diese kommunizieren alle über eine I2C Schnittstelle miteinander. 
 Komponenten:
-* BME680 (Umgebungssensor mit integrierter Sensorik für Luftfeuchtigkeit, Druck, Temperatur und Luftgüte)
-* Tiny RTC I2C Module DS1307 (**R**eal **T**ime **C**lock)
-* 2x Arduino Uno R3
+- BME680 (Umgebungssensor mit integrierter Sensorik für Luftfeuchtigkeit, Druck, Temperatur und Luftgüte)
+- Tiny RTC I2C Module DS1307 (**R**eal **T**ime **C**lock)
+- 2x Arduino Uno R3
 
 Unsere Aufgaben sind immer gleich struckturiert:  
 - Aufgabe 'Nummer':  
@@ -29,9 +29,9 @@ Außerdem sollt ihr herausfinden um welche Komponente es sich bei der herausgefu
 
 ### Hinweise
 Datenblätter:  
-- [Datasheet BME680](https://www.joy-it.net/files/files/Produkte/SEN-BME680/SEN-BME680-Datenblatt.pdf)
-- [Anleitung BME680](https://www.joy-it.net/files/files/Produkte/SEN-BME680/SEN-BME680_Anleitung_2024-04-11.pdf)
-- [Datasheet tiny RTC](https://pdf.direnc.net/upload/tinyrtc-i2c-modul-datasheet.pdf)
+-   [Datasheet BME680](https://www.joy-it.net/files/files/Produkte/SEN-BME680/SEN-BME680-Datenblatt.pdf)
+-   [Anleitung BME680](https://www.joy-it.net/files/files/Produkte/SEN-BME680/SEN-BME680_Anleitung_2024-04-11.pdf)
+-   [Datasheet tiny RTC](https://pdf.direnc.net/upload/tinyrtc-i2c-modul-datasheet.pdf)
 
 Libraries:  
 - [Adafruit_BME680](https://github.com/adafruit/Adafruit_BME680)
