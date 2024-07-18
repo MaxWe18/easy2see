@@ -20,10 +20,11 @@ char daysOfTheWeek[7][12] = {
 };
 
 Adafruit_BME680 bme; // I2C
+
 RTC_DS1307 rtc;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   bme.begin();
   bme.setTemperatureOversampling(BME680_OS_8X);
@@ -32,7 +33,12 @@ void setup() {
   bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
   bme.setGasHeater(320, 150); 
 
-  // automatically sets the RTC to the date & time on PC this sketch was compiled
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    Serial.flush();
+    while (1);
+  }
+
   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 
   // Display
@@ -67,6 +73,7 @@ void loop() {
 
   Serial.println();
 
+  
   // RTC 
   DateTime now = rtc.now();
   Serial.print("Date & Time: ");
@@ -84,15 +91,67 @@ void loop() {
   Serial.print(':');
   Serial.println(now.second(), DEC);
 
-  
+  Serial.println();
+
+
   // Display
+  float ftemp = bme.temperature; 
+  char ctemp[4];
+  dtostrf(ftemp, 8, 2, ctemp);
+
+  float fpre = bme.pressure; 
+  char cpre[10];
+  dtostrf(fpre, 8, 2, cpre);
+
+  float fhum = bme.humidity; 
+  char chum[10];
+  dtostrf(fhum, 8, 2, chum);
+
+  float fgas = bme.gas_resistance; 
+  char cgas[10];
+  dtostrf(fgas, 8, 2, cgas);
+
+  float falt = bme.readAltitude(SEALEVELPRESSURE_HPA); 
+  char calt[10];
+  dtostrf(falt, 8, 2, calt);
+
+  int ihour = now.hour();
+  int imin = now.minute();
+  char chour[10];
+  char cmin[10];
+  itoa(ihour, chour, 10);
+  itoa(imin, cmin, 10);
+
+  
+  
+ 
   Paint_NewImage(LCD_WIDTH, LCD_HEIGHT, 90, WHITE);
   Paint_Clear(WHITE);
 
-  Paint_DrawString_EN(30, 10, "Hallo!", &Font24, YELLOW, RED);  
-  Paint_DrawString_EN(30, 34, "Dies Test ist!", &Font24, BLUE, CYAN);
-  
+  Paint_DrawString_EN(20, 10, "Temperatur: ", &Font16, WHITE, BLUE);  
+  Paint_DrawString_EN(115, 10, ctemp, &Font16, WHITE, BLUE);
+  Paint_DrawString_EN(210, 10, "Grad", &Font16, WHITE, BLUE);
 
+  Paint_DrawString_EN(20, 30, "Druck: ", &Font16, WHITE, BLUE);  
+  Paint_DrawString_EN(115, 30, cpre, &Font16, WHITE, BLUE);
+  Paint_DrawString_EN(210, 30, "Pa", &Font16, WHITE, BLUE);
+
+  Paint_DrawString_EN(20, 50, "Feuchte: ", &Font16, WHITE, BLUE);  
+  Paint_DrawString_EN(115, 50, chum, &Font16, WHITE, BLUE);
+  Paint_DrawString_EN(210, 50, "%", &Font16, WHITE, BLUE);
+
+  Paint_DrawString_EN(20, 70, "H.ue.n.N: ", &Font16, WHITE, BLUE);  
+  Paint_DrawString_EN(115, 70, calt, &Font16, WHITE, BLUE);
+  Paint_DrawString_EN(210, 70, "m", &Font16, WHITE, BLUE);
+
+  Paint_DrawString_EN(20, 90, "Uhrzeit:" , &Font16, WHITE, BLUE);  
+  Paint_DrawString_EN(147, 90, chour, &Font16, WHITE, BLUE);
+  Paint_DrawString_EN(170, 90, ":", &Font16, WHITE, BLUE);
+  Paint_DrawString_EN(180, 90, cmin, &Font16, WHITE, BLUE);
+  Paint_DrawString_EN(210, 90, "Uhr", &Font16, WHITE, BLUE);
+
+  
+  
   delay(1000); 
 
 }
