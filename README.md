@@ -158,6 +158,7 @@ Dafür ist am Arduino über eine SPI Schnittstelle (falls Interesse besteht kön
 Das Display soll nun abwechselnd Lufttemperatur, Luftdruck und Luftfeuchte zusammen mit der aktuellen Zeit und dem Datum anzeigen. Dafür müsst ihr euer Wissen aus den vorangegangenen Aufgaben nutzen und dazu noch das Display richtig konfigurieren. Beachtet hierfür die Hinweise. Ihr könnt bei dieser Aufgabe frei entscheiden wie ihr die Daten optisch darstellen wollt. Der Fantasie sind keine Grenzen gesetzt, jedoch sollte man die Werte am Ende auch gut lesen können. Achtet deswegen auf Kontraste.
 ### Hinweise
 [Anleitung Display](https://www.waveshare.com/wiki/1.69inch_LCD_Module#Arduino)
+
 ### Startcode
 
 ``` ino
@@ -185,3 +186,30 @@ void loop() {}
 Nun seid ihr gefragt. Bei dieser Aufgabenstellung geben wir euch keine Hilfen, denn ihr habt bis hierhin gelernt wie man mit Bibliotheken und Tutorials umgeht und die benötigten Informationen in euer eigenes Programm übernehmt.
 
 Viel Spaß beim ausprobieren :)
+
+### Achtung
+
+Um Nachfolgenden Studenten das selbe Erlebnis zu bieten müsst ihr das Display wieder "weiß" machen.
+Fügt dafür bitte diesen Code in den Editor ein und führt ihn aus.
+```cpp
+#include <SPI.h>
+#include "LCD_Driver.h"
+#include "GUI_Paint.h"
+
+void setup()
+{
+    Config_Init();
+    LCD_Init();
+
+    LCD_SetBacklight(100);
+}
+
+
+void loop()
+{
+  Paint_NewImage(LCD_WIDTH, LCD_HEIGHT, 90, WHITE);
+  Paint_Clear(WHITE);
+
+}
+
+```
