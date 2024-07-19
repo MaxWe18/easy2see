@@ -161,7 +161,7 @@ Das Display soll nun abwechselnd Lufttemperatur, Luftdruck und Luftfeuchte zusam
 
 ### Startcode
 
-``` ino
+``` cpp
 #include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
@@ -191,7 +191,8 @@ Viel Spaß beim ausprobieren :)
 
 Um Nachfolgenden Studenten das selbe Erlebnis zu bieten müsst ihr das Display wieder "weiß" machen.
 Fügt dafür bitte diesen Code in den Editor ein und führt ihn aus.
-```cpp
+
+``` cpp
 #include <SPI.h>
 #include "LCD_Driver.h"
 #include "GUI_Paint.h"
