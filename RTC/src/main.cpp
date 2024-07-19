@@ -16,6 +16,12 @@ char daysOfTheWeek[7][12] = {
 void setup () {
   Serial.begin(9600);
 
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    Serial.flush();
+    while (1);
+  }
+
   // automatically sets the RTC to the date & time on PC this sketch was compiled
   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 
